@@ -10,5 +10,4 @@ RUN apt-get update \
 
 COPY ./ ./
 
-RUN npm install \
-    && npm run build
+RUN npm install
