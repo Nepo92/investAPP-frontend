@@ -4,8 +4,6 @@ WORKDIR /root/app/frontend
 
 COPY . .
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
 ENV APP_NAME app.com
 ENV CONTAINER_PORT 80
 ENV NODE_VERSION v20.10
@@ -39,4 +37,4 @@ RUN sudo rm /etc/nginx/sites-available/default \
     && gpasswd -a www-data root \
     && chmod g+x /root && chmod g+x /root/app && chmod g+x /root/app/frontend
 
-CMD npm install && npm run build && nginx -g 'daemon off;'
+CMD git pull && npm install && npm run build && nginx -g 'daemon off;'
