@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo 'server {
-    listen 10.0.0.102;
-    root /home/nepo/frontend;
+    listen 80;
+    root /root/app/frontend/dist;
     index index.html;
     location / {
         try_files $uri $uri/ =404;
