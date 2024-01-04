@@ -2,7 +2,7 @@
 
 echo 'server {
     listen 80;
-    root /home/nepo/webapps/frontend/dist;
+    root /root/frontend/dist;
     index index.html;
     location / {
         try_files $uri $uri/ =404;

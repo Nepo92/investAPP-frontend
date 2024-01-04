@@ -1,11 +1,11 @@
 FROM ubuntu:22.04
 
-ENV USER_DIR /home/nepo
+ENV USER_DIR /root
 ENV APP_NAME app.com
 ENV CONTAINER_PORT 80
 ENV NODE_VERSION v20.10
 
-WORKDIR $USER_DIR/webapps/$APP_NAME/frontend;
+WORKDIR $USER_DIR/frontend
 
 COPY . .
 
@@ -36,9 +36,7 @@ RUN sudo rm /etc/nginx/sites-available/default \
     && bash ./.nginx/nginx.sh \
     && ln -s /etc/nginx/sites-available/$APP_NAME /etc/nginx/sites-enabled/$APP_NAME \
     && gpasswd -a www-data root \
-    && chmod g+x /home \ 
     && chmod g+x $USER_DIR \
-    && chmod g+x $USER_DIR/webapps \
-    && chmod g+x $USER_DIR/webapps/$APP_NAME
-    
+    && chmod g+x $USER_DIR/frontend
+
 CMD git pull && npm install && npm run build && nginx -g 'daemon off;'
