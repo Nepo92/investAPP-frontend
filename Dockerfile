@@ -5,7 +5,7 @@ ENV APP_NAME app.com
 ENV CONTAINER_PORT 80
 ENV NODE_VERSION v20.10
 
-WORKDIR $USER_DIR/webapps/frontend;
+WORKDIR $USER_DIR/webapps/$APP_NAME/frontend;
 
 COPY . .
 
@@ -40,6 +40,6 @@ RUN sudo rm /etc/nginx/sites-available/default \
     && chmod g+x $USER_DIR \
     && chmod g+x $USER_DIR/webapps \
     && chmod g+x $USER_DIR/webapps/app.com \
-    && $USER_DIR/webapps/app.com/frontend
+    && chmod g+x $USER_DIR/webapps/app.com/frontend
 
 CMD git pull && npm install && npm run build && nginx -g 'daemon off;'
