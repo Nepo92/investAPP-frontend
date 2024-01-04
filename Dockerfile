@@ -39,7 +39,6 @@ RUN sudo rm /etc/nginx/sites-available/default \
     && chmod g+x /home \ 
     && chmod g+x $USER_DIR \
     && chmod g+x $USER_DIR/webapps \
-    && chmod g+x $USER_DIR/webapps/app.com \
-    && chmod g+x $USER_DIR/webapps/app.com/frontend
-
+    && chmod g+x $USER_DIR/webapps/$APP_NAME
+    
 CMD git pull && npm install && npm run build && nginx -g 'daemon off;'
