@@ -5,6 +5,6 @@ echo 'server {
     root /root/frontend/dist;
     index index.html;
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ $uri.html /index.html;
     }
 }' > /etc/nginx/sites-available/app.com
