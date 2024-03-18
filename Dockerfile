@@ -1,9 +1,4 @@
-FROM ubuntu:22.04
-
-ENV USER_DIR /root
-ENV APP_NAME app.com
-ENV CONTAINER_PORT 80
-ENV NODE_VERSION v20.10
+FROM ubuntu:alpine
 
 WORKDIR $USER_DIR/frontend
 

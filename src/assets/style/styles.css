@@ -1,0 +1,4 @@
+@layer fonts, settings;
+
+@import "@/assets/style/utils/_settings.scss" layer(settings);
+@import "@/assets/style/utils/_fonts.scss" layer(fonts);

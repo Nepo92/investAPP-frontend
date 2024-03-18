@@ -1,7 +1,19 @@
+<script setup lang="ts"></script>
+
 <template>
-  <router-view></router-view>
+  <div class="invest-app">
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup></script>
-
-<style></style>
+<style scoped lang="scss">
+.invest-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100svw;
+  height: 100%;
+  min-height: 100svh;
+  padding: 15px;
+}
+</style>

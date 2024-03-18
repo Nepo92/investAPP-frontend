@@ -1,24 +1,9 @@
-# frontend
+# Frontend приложения для обзора портфеля ценных бумаг
 
-## Project setup
-```
-npm install
-```
+---
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### Стэк:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Vite, Vue 3, Typescript, pinia, axios, vitest
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Развертывание локально:
