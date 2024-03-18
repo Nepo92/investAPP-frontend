@@ -1,3 +1,10 @@
+import { RequestState } from "@/types/request";
+
+export interface LoginState {
+  form: LoginForm[];
+  login: RequestState;
+}
+
 export interface LoginField {
   name: string;
   value?: string;

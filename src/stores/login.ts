@@ -1,19 +1,8 @@
 import { computed, reactive } from "vue";
 import { defineStore } from "pinia";
-
-import { LoginField, LoginForm } from "@/types/login";
 import axios from "axios";
 
-interface RequestState {
-  __fetching: boolean;
-  __success: boolean;
-  __error: boolean;
-}
-
-interface LoginState {
-  form: LoginForm[];
-  login: RequestState;
-}
+import { LoginField, LoginState } from "@/types/login";
 
 const useLoginStore = defineStore("login", () => {
   const state: LoginState = reactive({
