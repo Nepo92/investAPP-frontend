@@ -4,6 +4,8 @@ import axios from "axios";
 
 import { LoginField, LoginState } from "@/types/login";
 
+const backend_api = import.meta.env.VITE_BACKEND_URL;
+
 const useLoginStore = defineStore("login", () => {
   const state: LoginState = reactive({
     form: [
@@ -46,7 +48,7 @@ const useLoginStore = defineStore("login", () => {
         password: passwordField.value?.value,
       };
 
-      await axios.post("/api/login", JSON.stringify(body));
+      await axios.post(`${backend_api}/login`, JSON.stringify(body));
 
       login.value.__success = true;
       login.value.__error = false;

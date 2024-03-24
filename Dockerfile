@@ -1,4 +1,11 @@
-FROM ubuntu:alpine
+FROM ubuntu:latest
+
+ENV APP_NAME /investAPP
+
+ENV USER_DIR /root
+
+ENV CONTAINER_PORT 80
+ENV NODE_VERSION v20.10
 
 WORKDIR $USER_DIR/frontend
 
