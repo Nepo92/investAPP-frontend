@@ -19,7 +19,7 @@ describe("Страница логина", () => {
     expect(isEmpty.value).toBe(false);
   });
 
-  it("Форма логина пустая", () => {
+  it("Кнопка входа правильно задизэйблена", () => {
     const loginStore = useLoginStore();
 
     loginStore.updateField({ name: "Логин", value: "" });
@@ -28,16 +28,12 @@ describe("Страница логина", () => {
     const isEmpty = computed(() => loginStore.formIsEmpty);
 
     expect(isEmpty.value).toBe(true);
-  });
-
-  it("Форма логина пустая (полностью)", () => {
-    const loginStore = useLoginStore();
 
     loginStore.updateField({ name: "Логин", value: "" });
     loginStore.updateField({ name: "Пароль", value: "" });
 
-    const isEmpty = computed(() => loginStore.formIsEmpty);
+    const isEmptyForm = computed(() => loginStore.formIsEmpty);
 
-    expect(isEmpty.value).toBe(true);
+    expect(isEmptyForm.value).toBe(true);
   });
 });

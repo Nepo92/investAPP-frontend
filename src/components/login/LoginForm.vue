@@ -36,7 +36,7 @@ async function tryToLogin() {
           :type="item.type"
           class="login-form__input"
           :placeholder="item.name"
-          :value="item.value"
+          :value="item"
           @input="typeData"
         />
       </div>

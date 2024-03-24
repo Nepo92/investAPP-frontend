@@ -11,5 +11,6 @@ export interface LoginField {
 }
 
 export interface LoginForm extends LoginField {
-  type?: "text" | "password";
+  type?: string;
+  [index: string]: string | undefined;
 }

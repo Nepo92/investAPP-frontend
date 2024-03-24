@@ -2,9 +2,11 @@
 import { computed } from "vue";
 
 interface InputProps {
-  type?: "text" | "password";
+  type?: string;
   placeholder: string;
-  value?: string;
+  value: {
+    [index: string]: string | undefined;
+  };
   name?: string;
 }
 
@@ -15,16 +17,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emits = defineEmits(["input"]);
 
 const type = computed(() => props.type);
-const value = computed(() => props.value);
-
-function updateInput(e: Event) {
-  const t = e.target as HTMLInputElement;
-
-  emits("input", {
-    name: props.name,
-    value: t.value,
-  });
-}
+const model = computed(() => props.value);
 </script>
 
 <template>
@@ -33,9 +26,8 @@ function updateInput(e: Event) {
     autocomplete="off"
     :type="type"
     :name="props.name"
-    :value="value"
+    v-model="model.value"
     :placeholder="props.placeholder"
-    @input="updateInput"
   />
 </template>
 
